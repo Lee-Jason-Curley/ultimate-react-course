@@ -142,3 +142,40 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+var b = getBook(4);
+
+// Destructuring
+const book = getBook(2);
+//const { title, author } = book;
+//const title = book.title;
+//const author = book.author
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book;
+author;
+console.log(author)
+
+//const primaryGenre = genres[0];
+//const secondaryGenre = genres[1];
+
+// Using the Spread Operator
+const [primaryGenre, secondaryGenre, ...everythingElse] = genres;
+genres;
+primaryGenre;
+secondaryGenre;
+everythingElse;
+
+const newGenres = [...genres, "new genre"];
+newGenres;
+
+const updatedBook = 
+{
+    ...book,
+    // Adding a new genre.
+    genres: newGenres,
+    // Adding a new property.
+    moviePublicationDate: "2022-01-01",
+    // Updating an existing property.
+    pages: 310
+};
+
+updatedBook;
