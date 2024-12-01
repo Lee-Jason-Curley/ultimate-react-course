@@ -167,7 +167,7 @@ everythingElse;
 const newGenres = [...genres, "new genre"];
 newGenres;
 
-const updatedBook = 
+const updatedBook =
 {
     ...book,
     // Adding a new genre.
@@ -178,4 +178,24 @@ const updatedBook =
     pages: 310
 };
 
-updatedBook;
+// Template literals
+const getYear = (str) => str.split('-')[0];
+const summary = `${title}, a ${pages}-page a book, was written by ${author} and published in ${publicationDate.split('-')[0]}.`;
+summary;
+
+const summary2 = `${title}, a ${pages}-page a book, was written by ${author} and published in ${getYear(publicationDate)}.`;
+summary;
+summary2;
+
+// Ternary operator
+var pageRange = pages > 1000 ? 'over a thousand' : 'under a thousand';
+console.log(`The book has ${pageRange} pages.`);
+
+
+// Arrow functions
+//function getYear(str) {
+//  return str.split('-')[0];
+//}
+
+
+console.log(getYear(publicationDate));
